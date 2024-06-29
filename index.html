@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundacion Amigos Peludos - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt="Logo ONG" title="Inicio"></a>
+            </div>
+            <div class="navbar-hamburguer" title="Menu Principal">
+                <button class="navbar-hamburguer-toggler" onclick="toggleNavbar()">
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                </button>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="adopciones.html" onclick="handleLinkClick()">ADOPCIONES RESPONSABLES</a></li>
+                    <li><a href="conocenos.html" onclick="handleLinkClick()">CONÓCENOS</a></li>
+                    <li><a href="preguntas-frecuentes.html" onclick="handleLinkClick()">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="formulario-adopcion.html" onclick="handleLinkClick()">QUIERO ADOPTAR</a></li>
+                    <li><a href="donaciones.html" onclick="handleLinkClick()">¡DONAR YA!</a></li>
+                </ul>
+            </div>
+            <div id="phraseContainer">
+                <p class="phrase"> Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida.
+                    - Anatole France <i class="fas fa-feather-alt" style="color: #FFFFFF;"></i> -
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content-home">
+
+        <div class="carousel">
+            <div class="slide">
+                <img src="images/gato-11.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="images/perro-1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="images/gato-6.jpg" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="images/perro-6.jpeg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="images/perro-7.jpg" alt="Slide 4">
+            </div>
+            <div class="slide">
+                <img src="images/perro-3.jpg" alt="Slide 5">
+            </div>
+            <div class="slide">
+                <img src="images/perro-5.jpeg" alt="Slide 6">
+            </div>
+        </div>
+
+        <div class="main-sections">
+
+            <div class="section-subtitle">
+                <div class="logo-container">
+                    <a class="link-general" href="conocenos.html">
+                        <img src="images/logo.jpg" alt="Logo de la Fundación">
+                    </a>
+                </div>
+                <div class="foundation-name">
+                    <h1>FUNDACIÓN AMIGOS PELUDOS</h1>
+                    <p style="font-family: tomatoes; font-weight: bold;">Más de diez años juntos, cambiando vidas
+                        peludas. Conocé más de <a class="link-general" href="conocenos.html">nosotros.</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-subtitle" style="background-color: #eeecec;">
+                <div class="image-subtitle-container">
+                    <a class="link-general" href="adopciones.html">
+                        <img src="images/adopciones-logo.jpg" alt="Imagen de adopciones">
+                    </a>
+                    <div class="foundation-name">
+                        <h3>ADOPCIONES</h3>
+                    </div>
+                </div>
+                <div class="foundation-name">
+                    <p>Adoptar implica asumir la responsabilidad de
+                        su bienestar y felicidad a lo largo de su vida. Hacé click <a class="link-general"
+                            href="adopciones.html">acá</a> para visitar nuestra galería para poder elegir tu
+                        próximo compañero/a de aventuras.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-subtitle">
+                <div class="image-subtitle-container">
+                    <a class="link-general" href="donaciones.html">
+                        <img src="images/donaciones.jpeg" alt="Imagen de adopciones">
+                    </a>
+                    <div class="foundation-name">
+                        <h3>DONACIONES</h3>
+                    </div>
+                </div>
+                <div class="foundation-name">
+                    <p>Los aportes económicos son importantes para pagar tratamientos, estudios médicos y honorarios
+                        veterinarios, comprar insumos y alimento, financiar campañas de castración en zonas carenciadas,
+                        imprimir material de difusión entre otros. <a class="link-general"
+                            href="donaciones.html">¡Quiero aportar!</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="section-charts">
+            <div class="chart-container">
+                <h4 class="title-charts">ADOPCIONES POR TIPO DE MASCOTA</h4>
+                <canvas id="adoptedPetsChart"></canvas>
+                <small class="ref-charts"><span class="asterisco-rojo">* </span>Datos acumulados durante el último
+                    año.</small>
+            </div>
+            <div class="chart-container">
+                <h4 class="title-charts">CANTIDAD DE ADOPCIONES ANUALES</h4>
+                <canvas id="adoptionsPerYearChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h4 class="title-charts">CANTIDAD DE ADOPCIONES MENSUALES</h4>
+                <canvas id="adoptionsByMonthChart"></canvas>
+                <small class="ref-charts"><span class="asterisco-rojo">* </span>Datos acumulados durante el último
+                    año.</small>
+            </div>
+            <div class="chart-container">
+                <h4 class="title-charts">MONTOS DE DONACIONES POR AÑO</h4>
+                <canvas id="donationsChart"></canvas>
+            </div>
+        </div>
+        </div>
+
+        <div class="section-location">
+            <h4 class="title-location">DÓNDE ENCONTRARNOS</h4>
+            <p>Dirección: Calle General Fotheringam 123, Neuquén Capital, Argentina</p>
+            <div id="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.173110674678!2d-68.07142522424803!3d-38.95372347171213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33c9abf9778d%3A0xa3f66b8dcbf9e85a!2sGral.%20Fotheringham%20123%2C%20Neuqu%C3%A9n!5e1!3m2!1ses-419!2sar!4v1719613572370!5m2!1ses-419!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- Botón de WhatsApp -->
+        <div class="whatsapp-button">
+            <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20Fundación%20Amigos%20Peludos,%20quiero%20colaborar!"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+    </main>
+
+     <!-- JAVASCRIPT -->
+     <script src="scripts.js"></script>
+     <script src="carousel.js"></script>
+     <script src="data/datos-mascotas.js"></script>
+     <script src="chart-script.js"></script>
+
+    </body>
+    
+
+    <footer>
+        <p>&copy; 2024 Fundación Amigos Peludos. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+   
+</html>

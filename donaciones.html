@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundacion Amigos Peludos - Donaciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt="Logo ONG" title="Inicio"></a>
+            </div>
+            <div class="navbar-hamburguer" title="Menu Principal">
+                <button class="navbar-hamburguer-toggler" onclick="toggleNavbar()">
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                </button>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="adopciones.html" onclick="handleLinkClick()">ADOPCIONES RESPONSABLES</a></li>
+                    <li><a href="conocenos.html" onclick="handleLinkClick()">CONÓCENOS</a></li>
+                    <li><a href="preguntas-frecuentes.html" onclick="handleLinkClick()">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="formulario-adopcion.html" onclick="handleLinkClick()">QUIERO ADOPTAR</a></li>
+                    <li><a href="donaciones.html" onclick="handleLinkClick()">¡DONAR YA!</a></li>
+                </ul>
+            </div>
+            <div id="phraseContainer">
+                <p class="phrase"> Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida.
+                    - Anatole France <i class="fas fa-feather-alt" style="color: #FFFFFF;"></i> -
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content-home">
+        <section id="general-section">
+            <div class="section-header">
+                <h2>DONACIONES</h2>
+            </div>
+            <div class="section-content">
+                <p>Tu contribución ayuda a salvar vidas y a proporcionar un hogar seguro para nuestras mascotas
+                    rescatadas. Puedes donar a través de transferencia bancaria o Mercado Pago.
+                    Los aportes económicos son importantes para pagar tratamientos, estudios médicos y honorarios
+                    veterinarios, comprar insumos y alimento, financiar campañas de castración en zonas carenciadas,
+                    imprimir material de difusión entre otros. ¡Gracias por tu solidario aporte!
+                </p>
+            </div>
+
+            <div class="donations-container">
+                <div class="donation-option">
+                    <h3>Transferencia Bancaria</h3>
+                    <p>Realiza tu donación a la siguiente cuenta bancaria:</p>
+                    <ul>
+                        <li><strong>Banco:</strong> Banco de Galicia y Buenos Aires S.A.U.</li>
+                        <li><strong>Cuenta:</strong> 123456789</li>
+                        <li><strong>CBU:</strong> 1234567890123456789012</li>
+                        <li><strong>Alias:</strong> ONG.AMIGOS.PELUDOS</li>
+                        <li><strong>CUIT:</strong> 30-12345678-9</li>
+                    </ul>
+                    <img src="images/banco-galicia.svg" alt="Mercado Pago" class="mercado-pago-logo">
+                </div>
+
+                <div class="donation-option">
+                    <h3>Mercado Pago</h3>
+                    <p>Podes realizar tu aporte a través de Mercado Pago usando el siguiente alias:</p>
+                    <ul>
+                        <li><strong>Banco:</strong> Mercado Libre S.R.L</li>
+                        <li><strong>CBU:</strong> 98765432198765432101253</li>
+                        <li><strong>Alias:</strong> ONG.AMIGOS.PELUDOS.MP</li>
+                        <li><strong>Titular:</strong> Fundación Amigos Peludos</li>
+                        <li><strong>CUIT:</strong> 30-98754655-9</li>
+                    </ul>
+                    <img src="images/mercado-pago-logo.png" alt="Mercado Pago" class="mercado-pago-logo">
+                </div>
+            </div>
+        </section>
+
+         <!-- Botón de WhatsApp -->
+         <div class="whatsapp-button">
+            <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20Fundación%20Amigos%20Peludos,%20quiero%20colaborar!"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+<footer>
+    <p>&copy; 2024 Fundación Amigos Peludos. Todos los derechos reservados.</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</footer>
+
+</html>

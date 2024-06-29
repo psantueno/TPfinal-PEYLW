@@ -1,0 +1,793 @@
+@font-face {
+    font-family: 'Tomatoes';
+    src: url('fonts/tomatoes.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+hr {
+    color: #f0efef;
+    border-style: solid;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #333;
+}
+
+.logo {
+    margin-left: 35px;
+    /* Espacio entre el logo y el botón hamburguesa */
+    margin-right: 35px;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    align-items: center;
+    display: none;
+    /* Inicialmente oculto */
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.nav-list.open {
+    opacity: 1;
+    transform: translateY(0);
+    justify-content: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nav-list li {
+    margin: 0 27px;
+    transition: transform 0.3s ease-in-out;
+    /* Agregar una transición suave */
+}
+
+.nav-list li:hover {
+    animation-name: pulse;
+    /* Aplicar la animación al hacer hover */
+    animation-duration: 1s;
+    /* Duración de la animación */
+    animation-timing-function: ease-in-out;
+    /* Función de temporización */
+    animation-iteration-count: infinite;
+    /* Repetir la animación infinitamente */
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav-list a:hover {
+    color: #ccc;
+}
+
+/* Estilo específico para resaltar "DONAR YA" */
+.nav-list a[href="donaciones.html"] {
+    background-color: #88a927;
+    /* Color naranja para resaltar */
+    border-bottom: 2px solid #88a927;
+    /* Borde naranja en la parte inferior */
+    padding: 12px;
+    color: #ffffff;
+    border-radius: 50px;
+    transition: all 0.5s;
+}
+
+.nav-list a[href="donaciones.html"]:hover {
+    background-color: #e67e22;
+    /* Cambia el color al hacer hover */
+    border-color: #e67e22;
+    /* Cambia el color del borde al hacer hover */
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para el botón hamburguesa */
+.navbar-hamburguer {
+    margin-left: 15px;
+    margin-right: 80px;
+}
+
+.navbar-hamburguer-toggler {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+}
+
+.navbar-hamburguer-toggler-line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    /* Color blanco */
+    transition: all 0.3s;
+}
+
+.navbar-hamburguer-toggler.open .navbar-hamburguer-toggler-line:first-of-type {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-hamburguer-toggler.open .navbar-hamburguer-toggler-line:nth-of-type(2) {
+    opacity: 0;
+}
+
+.navbar-hamburguer-toggler.open .navbar-hamburguer-toggler-line:last-of-type {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Phrase navbar */
+.phrase {
+    color: #ffffff;
+    /* Color de la frase */
+    font-family: 'Tomatoes', Arial, sans-serif;
+    text-align: center;
+    margin-left: 40px;
+    /* Espacio alrededor de la frase */
+    font-size: 18px;
+}
+
+/* body home */
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Espacio entre las tarjetas */
+    margin: 50px 0;
+    /* Margen superior e inferior de 20px */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 265px;
+    /* Ancho fijo para todas las tarjetas */
+    text-align: center;
+    margin: 30px;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+.card img {
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+
+/* Estilos específicos para las secciones */
+
+#general-section {
+    text-align: center;
+    /* Alineación central del contenido */
+    margin: 40px auto;
+    /* Margen exterior para centrar verticalmente */
+    padding: 0 30px;
+    /* Espaciado interior */
+}
+
+
+#general-section .section-header h2 {
+    font-size: 32px;
+    /* Tamaño de fuente del título */
+    color: #333;
+    /* Color del texto */
+    text-align: center;
+    /* Centrar el título */
+}
+
+#general-section .section-content {
+    line-height: 1.6;
+    /* Espaciado entre líneas del texto */
+    font-size: 18px;
+    /* Tamaño de fuente del texto */
+    text-align: justify;
+    /* Justificar el texto */
+    max-width: 100%;
+    /* Ocupar todo el ancho disponible */
+    margin: auto;
+    /* Centrar horizontalmente */
+}
+
+/* Estilos específicos para el carrusel */
+
+.carousel {
+    max-width: 100%;
+    max-height: 400px;
+   
+    overflow: hidden;
+}
+
+.carousel .slide {
+    display: none;
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    /* Ajusta la altura automáticamente */
+    object-fit: cover;
+    /* Cubre el área del contenedor */
+    max-width: 100%;
+    max-height: 800px;
+    /* Altura máxima para las imágenes */
+    vertical-align: middle;
+}
+
+.slide {
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    height: 400px;
+    /* Ajusta según el tamaño máximo deseado */
+    overflow: hidden;
+    /* Ocultar partes de la imagen que sobresalgan del slide */
+}
+
+.slide img {
+    max-width: 100%;
+    /* Asegurar que la imagen no supere el ancho del slide */
+    max-height: 100%;
+    /* Asegurar que la imagen no supere el alto del slide */
+    object-fit: cover;
+    /* Escalar la imagen para cubrir todo el slide */
+}
+
+/* Animación para el logo */
+.logo img {
+    height: 80px;
+    border-radius: 50%;
+    width: 80px;
+    /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+    transition: transform 0.5s ease;
+    /* Transición suave para la rotación */
+}
+
+/* Animación al hacer hover sobre el logo */
+.logo img:hover {
+    transform: rotate(360deg);
+    /* Gira el logo 360 grados */
+}
+
+#content-home {
+    margin-bottom: 180px;
+    text-align: center;
+}
+
+
+/* Estilos para la sección subtítulo */
+
+.main-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Alinea los elementos al centro horizontalmente */
+    text-align: center;
+    /* Alinea el contenido del texto al centro */
+}
+
+.section-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+    /* Fondo opcional */
+    height: 350px;
+    width: 100%;
+    /* Ocupa el 100% del ancho del contenedor */
+}
+
+.logo-container,
+.image-subtitle-container {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    /* Asegura que el logo esté centrado */
+}
+
+.image-subtitle-container img {
+    width: 250px;
+    height: 225px;
+    border-radius: 50%;
+}
+
+
+.logo-container img {
+    width: 300px;
+    /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+    border-radius: 50%;
+
+}
+
+.foundation-name {
+    flex: 1;
+    text-align: center;
+    /* Asegura que el nombre de la fundación esté centrado */
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    /* Ajusta el tamaño del texto según sea necesario */
+    color: #333;
+}
+
+.foundation-name h3 {
+    margin: 0;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #333;
+    position: relative;
+    bottom: 30px;
+    border-radius: 50px;
+}
+
+.link-general {
+    color: #0f8015;
+    transition: all 0.3s;
+    text-shadow: 2px 2px 4px rgba(158, 183, 163, 0.9);
+    text-decoration: none;
+}
+
+.link-general:hover {
+    color: #88a927;
+    text-shadow: 2px 2px 4px rgba(118, 156, 126, 0.9);
+}
+
+a.link-card-adoptar {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s;
+}
+
+a.link-card-adoptar:hover {
+    /* box-shadow: 0 4px 8px rgba(209, 209, 209, 0.5); */
+    transform: scale(1.1);
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input,
+.select-container {
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Contenedor de gatos y perros */
+.gatos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.perros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Tarjeta de gato */
+.mascota-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mascota-card:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.mascota-card h3 {
+    margin-top: 0;
+}
+
+.mascota-card img {
+    border-radius: 50%;
+    /* Añade un borde redondeado del 50% a las imágenes de los gatos */
+    width: 150px;
+    /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.mascota-card button {
+    background-color: #88a927;
+    /* Color naranja para resaltar */
+    padding: 12px;
+    color: #ffffff;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.mascota-card button:hover {
+    background-color: #e67e22;
+    /* Cambia el color al hacer hover */
+}
+
+.parrafos-section {
+    line-height: 1.6;
+    /* Espaciado entre líneas del texto */
+    font-size: 18px;
+    /* Tamaño de fuente del texto */
+    text-align: justify;
+    /* Justificar el texto */
+    max-width: 100%;
+    /* Ocupar todo el ancho disponible */
+    margin: auto;
+    /* Centrar horizontalmente */
+}
+
+.section-header {
+    margin-bottom: 30px;
+    /* Espacio inferior para separar del contenido */
+}
+
+/* Sección de preguntas frecuentes */
+#faq-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+/* Sección de donaciones */
+
+.donations-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.donation-option {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.donation-option h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.donation-option p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.donation-option ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.donation-option ul li {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.mercado-pago-logo {
+    width: 150px;
+    margin-top: 10px;
+}
+
+/* Estilos del formulario de adopción */
+#adoption-form-section {
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #88a927;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e67e22;
+}
+
+#form-message {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.invalid {
+    border: 1px solid #DC143C !important;
+}
+
+.asterisco-rojo {
+    color: #DC143C;
+}
+
+.required-info {
+    text-align: left;
+    font-size: small;
+    margin: 0;
+    margin-top: 3px;
+    color: #333;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #88a927;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    display: none;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.section-charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chart-container {
+    
+    max-width: 42%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 40%;
+    box-sizing: border-box; /* Incluye el padding y borde en el cálculo del ancho */
+    margin: 20px 5px; 
+}
+
+.title-charts {
+    color: #333;
+    margin: 0;
+}
+
+.ref-charts {
+    font-size: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+.section-location {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-location .title-location {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-location p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 130px;
+    right: 20px;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e; /* Cambia el color al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Añade una sombra más pronunciada */
+}
+
+.whatsapp-button:hover a {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del icono al hacer hover */
+}

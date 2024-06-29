@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundacion Amigos Peludos - Adoptar Perro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="scripts.js"></script>
+    <script src="data/datos-mascotas.js"></script>
+    <script src="script-perros.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt="Logo ONG" title="Inicio"></a>
+            </div>
+            <div class="navbar-hamburguer" title="Menu Principal">
+                <button class="navbar-hamburguer-toggler" onclick="toggleNavbar()">
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                </button>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="adopciones.html" onclick="handleLinkClick()">ADOPCIONES RESPONSABLES</a></li>
+                    <li><a href="conocenos.html" onclick="handleLinkClick()">CONÓCENOS</a></li>
+                    <li><a href="preguntas-frecuentes.html" onclick="handleLinkClick()">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="formulario-adopcion.html" onclick="handleLinkClick()">QUIERO ADOPTAR</a></li>
+                    <li><a href="donaciones.html" onclick="handleLinkClick()">¡DONAR YA!</a></li>
+                </ul>
+            </div>
+            <div id="phraseContainer">
+                <p class="phrase"> Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida.
+                    - Anatole France <i class="fas fa-feather-alt" style="color: #FFFFFF;"></i> -
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content-home">
+
+        <section id="general-section">
+
+            <div class="section-header">
+                <h2>¿POR QUÉ ADOPTAR UN PERRO?</h2>
+            </div>
+
+            <div class="section-content">
+                <p>
+                    Los perros son conocidos por ser los mejores amigos del hombre. Son leales, cariñosos y siempre están
+                    dispuestos a brindar amor incondicional. Adoptar un perro no solo cambia la vida del animal, sino
+                    también la tuya. Los perros ayudan a reducir el estrés, la ansiedad y fomentan una vida más activa.
+                    Aquí te contamos más sobre los beneficios de tener un perro en casa.
+                </p>
+            </div>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="buscar-nombre" placeholder="Buscar por nombre" onkeyup="buscarPerros()">
+            <input type="number" id="buscar-edad" placeholder="Buscar por edad" onkeyup="buscarPerros()">
+            <input type="text" id="buscar-color" placeholder="Buscar por color" onkeyup="buscarPerros()">
+            <select class="select-container" id="buscar-genero" onchange="buscarPerros()" style="color: gray; border-color: gray; border-style: dotted;">
+                <option value="">- Seleccione el género -</option>
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+            </select>
+        </div>
+
+        <div id="perros-container" class="perros-container"></div>
+
+        <div class="whatsapp-button">
+            <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20Fundación%20Amigos%20Peludos,%20quiero%20colaborar!"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+<footer>
+    <p>&copy; 2024 Fundación Amigos Peludos. Todos los derechos reservados.</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</footer>
+
+</html>

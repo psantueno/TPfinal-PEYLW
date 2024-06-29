@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Amigos Peludos - Formulario Adopción</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="scripts.js"></script>
+    <script src="script-gatos.js" defer></script>
+    <script src="script-perros.js" defer></script>
+    <script src="formulario-adopcion.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt="Logo ONG" title="Inicio"></a>
+            </div>
+            <div class="navbar-hamburguer" title="Menu Principal">
+                <button class="navbar-hamburguer-toggler" onclick="toggleNavbar()">
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                </button>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="adopciones.html" onclick="handleLinkClick()">ADOPCIONES RESPONSABLES</a></li>
+                    <li><a href="conocenos.html" onclick="handleLinkClick()">CONÓCENOS</a></li>
+                    <li><a href="preguntas-frecuentes.html" onclick="handleLinkClick()">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="formulario-adopcion.html" onclick="handleLinkClick()">QUIERO ADOPTAR</a></li>
+                    <li><a href="donaciones.html" onclick="handleLinkClick()">¡DONAR YA!</a></li>
+                </ul>
+            </div>
+            <div id="phraseContainer">
+                <p class="phrase"> Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida.
+                    - Anatole France <i class="fas fa-feather-alt" style="color: #FFFFFF;"></i> -
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content-home">
+        <section id="adoption-form-section">
+            <div class="section-header">
+                <h2>FORMULARIO DE ADOPCIÓN</h2>
+            </div>
+            <div class="section-content">
+                <form id="adoption-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo: <span class="asterisco-rojo">*</span></label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: <span class="asterisco-rojo">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono: <span class="asterisco-rojo">*</span></label>
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]+" placeholder="Ej.: 2996582569">
+                        <p class="required-info">Código de área + número de teléfono.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo-animal">Tipo de mascota: <span class="asterisco-rojo">*</span></label>
+                        <select id="tipo-animal" name="tipo-animal">
+                            <option value="">- Seleccione el tipo de mascota -</option>
+                            <option value="gato">Gato</option>
+                            <option value="perro">Perro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre-mascota">Nombre de la Mascota: <span class="asterisco-rojo">*</span></label>
+                        <select id="nombre-mascota" name="nombre-mascota">
+                            <option value="">- Seleccione el nombre de la mascota -</option>
+                        </select>
+                        <p class="required-info">Seleccione el tipo de mascota para ver las mascotas disponibles.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                            placeholder="Ingrese un mensaje adicional (opcional)"></textarea>
+                        <p class="required-info"><span class="asterisco-rojo">*</span> Campos obligatorios.</p>
+                    </div>
+                    <button type="submit">Enviar Solicitud</button>
+                </form>
+                <p id="form-message" style="display:none;">Muchas gracias, nos comunicaremos con usted en la brevedad
+                    para confirmar sus datos y coordinar la entrega de tu mascota. Recuerde que deberá firmar un acta de
+                    compromiso de cuidado responsable. Aguarde y será redirigido al inicio de nuestro sitio.
+                </p>
+                <div class="loader" id="loader"></div>
+            </div>
+        </section>
+
+         <!-- Botón de WhatsApp -->
+         <div class="whatsapp-button">
+            <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20Fundación%20Amigos%20Peludos,%20quiero%20colaborar!"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+    </main>
+
+</body>
+
+    <footer>
+        <p>&copy; 2024 Fundación Amigos Peludos. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+
+</html>

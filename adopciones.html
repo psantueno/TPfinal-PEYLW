@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundacion Amigos Peludos - Adopciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+    <script src="data/datos-mascotas.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt="Logo ONG" title="Inicio"></a>
+            </div>
+            <div class="navbar-hamburguer" title="Menu Principal">
+                <button class="navbar-hamburguer-toggler" onclick="toggleNavbar()">
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                </button>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="adopciones.html" onclick="handleLinkClick()">ADOPCIONES RESPONSABLES</a></li>
+                    <li><a href="conocenos.html" onclick="handleLinkClick()">CONÓCENOS</a></li>
+                    <li><a href="preguntas-frecuentes.html" onclick="handleLinkClick()">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="formulario-adopcion.html" onclick="handleLinkClick()">QUIERO ADOPTAR</a></li>
+                    <li><a href="donaciones.html" onclick="handleLinkClick()">¡DONAR YA!</a></li>
+                </ul>
+            </div>
+            <div id="phraseContainer">
+                <p class="phrase"> Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida.
+                    - Anatole France <i class="fas fa-feather-alt" style="color: #FFFFFF;"></i> -
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content-home">
+
+        <section id="general-section">
+
+            <div class="section-header">
+                <h2>¿LISTO PARA ADOPTAR UNA MASCOTA?</h2>
+            </div>
+            <p class="parrafos-section">
+                Adoptar un animal de compañía enriquece la vida y abre las puertas a una época de diversión,
+                descubrimientos, juegos y mimos. Sin embargo, implica también asumir la responsabilidad de cuidar del
+                animal
+                durante muchos años, proporcionándole comida, un lugar seguro donde vivir, cuidados veterinarios y
+                preocupándonos de satisfacer sus necesidades en cuanto a actividad y cariño.
+
+                Se trata de una decisión con importantes repercusiones sobre nuestra vida y la de nuestro futuro miembro
+                de
+                la familia. Por esto, es importante plantearse algunas preguntas para saber si es estás listo para
+                adoptar
+                un animal perro o un gato.
+            </p>
+        </section>
+
+        <div class="card-container">
+
+            <!-- Tarjeta para adoptar perros -->
+            <a class="link-card-adoptar" href="adoptar-perro.html">
+                <div class="card">
+                    <img src="images/adoptar-perro.jpeg" alt="Perro">
+                    <h2>ADOPTAR UN PERRO</h2>
+                    <p>¡Encuentra tu compañero perfecto! Tenemos una variedad de perros listos para ser adoptados y
+                        formar
+                        parte de tu familia.</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta para adoptar gatos -->
+            <a class="link-card-adoptar" href="adoptar-gato.html">
+                <div class="card">
+                    <img src="images/adoptar-gato.jpg" alt="Gato">
+                    <h2>ADOPTAR UN GATO</h2>
+                    <p>Descubre nuestros gatos en búsqueda de un hogar amoroso. Cada uno tiene una historia especial
+                        y
+                        espera por ti.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="whatsapp-button">
+            <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20Fundación%20Amigos%20Peludos,%20quiero%20colaborar!"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+<footer>
+    <p>&copy; 2024 Fundación Amigos Peludos. Todos los derechos reservados.</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</footer>
+
+</html>

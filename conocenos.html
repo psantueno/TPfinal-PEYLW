@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundacion Amigos Peludos - Nosotros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="images/logo.jpg" alt="Logo ONG" title="Inicio"></a>
+            </div>
+            <div class="navbar-hamburguer" title="Menu Principal">
+                <button class="navbar-hamburguer-toggler" onclick="toggleNavbar()">
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                    <div class="navbar-hamburguer-toggler-line"></div>
+                </button>
+            </div>
+            <div>
+                <ul class="nav-list">
+                    <li><a href="adopciones.html" onclick="handleLinkClick()">ADOPCIONES RESPONSABLES</a></li>
+                    <li><a href="conocenos.html" onclick="handleLinkClick()">CONÓCENOS</a></li>
+                    <li><a href="preguntas-frecuentes.html" onclick="handleLinkClick()">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="formulario-adopcion.html" onclick="handleLinkClick()">QUIERO ADOPTAR</a></li>
+                    <li><a href="donaciones.html" onclick="handleLinkClick()">¡DONAR YA!</a></li>
+                </ul>
+            </div>
+            <div id="phraseContainer">
+                <p class="phrase"> Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida.
+                    - Anatole France <i class="fas fa-feather-alt" style="color: #FFFFFF;"></i> -
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="general-section">
+            <div class="carousel">
+                <div class="slide">
+                    <img src="images/pet-adoption-1.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="images/pet-adoption-2.png" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="images/pet-adoption-3.jpg" alt="Slide 3">
+                </div>
+                <div class="slide">
+                    <img src="images/pet-adoption-4.jpeg" alt="Slide 3">
+                </div>
+            </div>
+            <div class="section-header">
+                <h2>NOSOTROS</h2>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 120px;">
+                    En nuestra fundación, nos dedicamos apasionadamente a la causa de promover las adopciones de
+                    animales. Desde nuestros
+                    humildes comienzos, hemos trabajado incansablemente para brindar un hogar amoroso y permanente a
+                    cada animalito que
+                    llega a nuestro refugio. Creemos firmemente que cada vida cuenta, y cada historia merece una
+                    segunda oportunidad.
+                    Nuestro equipo está compuesto por voluntarios comprometidos que comparten un amor profundo por
+                    los animales.
+                    Juntos, nos esforzamos por rescatar, rehabilitar y encontrar hogares amorosos para perros y
+                    gatos de todas las
+                    edades y razas. Cada adopción no solo cambia la vida del animal adoptado, sino también la de sus
+                    nuevos dueños,
+                    quienes descubren el amor incondicional y la alegría que solo una mascota puede ofrecer.
+                    Además de las adopciones, también trabajamos activamente en programas educativos y de
+                    concienciación para fomentar
+                    la tenencia responsable de mascotas y promover la esterilización como medida crucial para
+                    controlar la población
+                    animal.
+                    En nuestra fundación, creemos en el poder transformador del amor y la compasión hacia los
+                    animales. Estamos
+                    comprometidos a seguir creciendo y expandiendo nuestro impacto positivo en la comunidad,
+                    inspirando a otros a
+                    unirse a nuestra causa y hacer del mundo un lugar mejor para todos los seres vivos.
+                    Únete a nosotros en nuestra misión de darles una segunda oportunidad a aquellos que más lo
+                    necesitan.
+                    Juntos, podemos hacer una diferencia real en la vida de nuestros amigos peludos y en la
+                    comunidad en general.
+                </p>
+            </div>
+        </section>
+
+        <!-- Botón de WhatsApp -->
+        <div class="whatsapp-button">
+            <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20Fundación%20Amigos%20Peludos,%20quiero%20colaborar!"
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <script src="scripts.js"></script>
+    <script src="conocenos.js"></script>
+</body>
+
+<footer>
+    <p>&copy; 2024 Fundación Amigos Peludos. Todos los derechos reservados.</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</footer>
+
+</html>
